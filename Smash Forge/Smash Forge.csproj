@@ -1490,6 +1490,7 @@
     <Content Include="lib\SALT.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\wangan_logo.png" />
     <None Include="Resources\specularSDR.dds" />
     <None Include="Resources\_10100000.png" />
     <None Include="Resources\_10040001.png" />
@@ -1591,6 +1592,8 @@
     <None Include="Resources\icon_model2.png" />
     <None Include="Resources\icon_bfres.bmp" />
     <None Include="Resources\icon_dat.png" />
+    <None Include="Resources\ForgeBack_WMMT.bmp" />
+    <None Include="Resources\ForgeBack_WMMT.png" />
     <Content Include="Resources\sexy_green_down_arrow.png" />
     <Content Include="Resources\forge2.ico" />
     <None Include="Resources\DefaultTexture.png" />

@@ -89,10 +89,10 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forgeWikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.greenArrowPictureBox = new System.Windows.Forms.PictureBox();
+            this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenArrowPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +141,7 @@
             this.nUTToolStripMenuItem,
             this.dSTexToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // modelToolStripMenuItem
@@ -174,7 +174,7 @@
             this.open3DSCharacterToolStripMenuItem,
             this.openOdysseyCostumeToolStripMenuItem});
             this.openVBNToolStripMenuItem.Name = "openVBNToolStripMenuItem";
-            this.openVBNToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.openVBNToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.openVBNToolStripMenuItem.Text = "Open";
             // 
             // openFileToolStripMenuItem
@@ -224,47 +224,47 @@
             // 
             this.openNUDToolStripMenuItem.Name = "openNUDToolStripMenuItem";
             this.openNUDToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.openNUDToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.openNUDToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.openNUDToolStripMenuItem.Text = "Save";
             this.openNUDToolStripMenuItem.Click += new System.EventHandler(this.saveFileToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // reloadShadersToolStripMenuItem
             // 
             this.reloadShadersToolStripMenuItem.Name = "reloadShadersToolStripMenuItem";
-            this.reloadShadersToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.reloadShadersToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.reloadShadersToolStripMenuItem.Text = "Reload Shaders";
             this.reloadShadersToolStripMenuItem.Click += new System.EventHandler(this.reloadShadersToolStripMenuItem_Click);
             // 
             // exportErrorLogToolStripMenuItem
             // 
             this.exportErrorLogToolStripMenuItem.Name = "exportErrorLogToolStripMenuItem";
-            this.exportErrorLogToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.exportErrorLogToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.exportErrorLogToolStripMenuItem.Text = "Export Shader Error Logs";
             this.exportErrorLogToolStripMenuItem.Click += new System.EventHandler(this.exportErrorLogToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(199, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(200, 6);
             // 
             // saveConfigToolStripMenuItem
             // 
             this.saveConfigToolStripMenuItem.Name = "saveConfigToolStripMenuItem";
-            this.saveConfigToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.saveConfigToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.saveConfigToolStripMenuItem.Text = "Save Config";
             this.saveConfigToolStripMenuItem.Click += new System.EventHandler(this.saveConfigToolStripMenuItem_Click);
             // 
             // clearWorkspaceToolStripMenuItem
             // 
             this.clearWorkspaceToolStripMenuItem.Name = "clearWorkspaceToolStripMenuItem";
-            this.clearWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.clearWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.clearWorkspaceToolStripMenuItem.Text = "Clear Workspace";
             this.clearWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.clearWorkspaceToolStripMenuItem_Click);
             // 
@@ -398,14 +398,14 @@
             // open3DSTEXEditorToolStripMenuItem
             // 
             this.open3DSTEXEditorToolStripMenuItem.Name = "open3DSTEXEditorToolStripMenuItem";
-            this.open3DSTEXEditorToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.open3DSTEXEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.open3DSTEXEditorToolStripMenuItem.Text = "Open 3DS TEX Editor";
             this.open3DSTEXEditorToolStripMenuItem.Click += new System.EventHandler(this.open3DSTEXEditorToolStripMenuItem_Click);
             // 
             // openDATTextureEditorToolStripMenuItem
             // 
             this.openDATTextureEditorToolStripMenuItem.Name = "openDATTextureEditorToolStripMenuItem";
-            this.openDATTextureEditorToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.openDATTextureEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.openDATTextureEditorToolStripMenuItem.Text = "Open DAT Texture Editor";
             this.openDATTextureEditorToolStripMenuItem.Click += new System.EventHandler(this.openDATTextureEditorToolStripMenuItem_Click);
             // 
@@ -458,14 +458,14 @@
             this.importWiiUNUTAsPS3NUTToolStripMenuItem});
             this.toolsToolStripMenuItem.Enabled = false;
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             this.toolsToolStripMenuItem.Visible = false;
             // 
             // importWiiUNUTAsPS3NUTToolStripMenuItem
             // 
             this.importWiiUNUTAsPS3NUTToolStripMenuItem.Name = "importWiiUNUTAsPS3NUTToolStripMenuItem";
-            this.importWiiUNUTAsPS3NUTToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.importWiiUNUTAsPS3NUTToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.importWiiUNUTAsPS3NUTToolStripMenuItem.Text = "Import Wii U NUT as PS3 NUT";
             this.importWiiUNUTAsPS3NUTToolStripMenuItem.Click += new System.EventHandler(this.importWiiUNUTAsPS3NUTToolStripMenuItem_Click);
             // 
@@ -500,7 +500,7 @@
             this.batchRenderBOTWBfresToolStripMenuItem,
             this.batchExportXMLToolStripMenuItem});
             this.batchRenderExperimentalToolStripMenuItem.Name = "batchRenderExperimentalToolStripMenuItem";
-            this.batchRenderExperimentalToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.batchRenderExperimentalToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.batchRenderExperimentalToolStripMenuItem.Text = "Experimental";
             // 
             // batchRenderToolStripMenuItem
@@ -509,28 +509,28 @@
             this.nudToolStripMenuItem1,
             this.meleeDatToolStripMenuItem1});
             this.batchRenderToolStripMenuItem.Name = "batchRenderToolStripMenuItem";
-            this.batchRenderToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.batchRenderToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.batchRenderToolStripMenuItem.Text = "Batch Render";
             this.batchRenderToolStripMenuItem.Click += new System.EventHandler(this.batchRenderNUDToolStripMenuItem_Click);
             // 
             // nudToolStripMenuItem1
             // 
             this.nudToolStripMenuItem1.Name = "nudToolStripMenuItem1";
-            this.nudToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.nudToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.nudToolStripMenuItem1.Text = "Nud";
             this.nudToolStripMenuItem1.Click += new System.EventHandler(this.nudToolStripMenuItem1_Click);
             // 
             // meleeDatToolStripMenuItem1
             // 
             this.meleeDatToolStripMenuItem1.Name = "meleeDatToolStripMenuItem1";
-            this.meleeDatToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.meleeDatToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.meleeDatToolStripMenuItem1.Text = "Melee Dat";
             this.meleeDatToolStripMenuItem1.Click += new System.EventHandler(this.meleeDatToolStripMenuItem1_Click);
             // 
             // batchRenderBOTWBfresToolStripMenuItem
             // 
             this.batchRenderBOTWBfresToolStripMenuItem.Name = "batchRenderBOTWBfresToolStripMenuItem";
-            this.batchRenderBOTWBfresToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.batchRenderBOTWBfresToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.batchRenderBOTWBfresToolStripMenuItem.Text = "Batch Render BOTW Bfres";
             this.batchRenderBOTWBfresToolStripMenuItem.Click += new System.EventHandler(this.batchRenderBOTWBfresToolStripMenuItem_Click);
             // 
@@ -540,7 +540,7 @@
             this.nUDToolStripMenuItem,
             this.meleeDatToolStripMenuItem});
             this.batchExportXMLToolStripMenuItem.Name = "batchExportXMLToolStripMenuItem";
-            this.batchExportXMLToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.batchExportXMLToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.batchExportXMLToolStripMenuItem.Text = "Batch Export XML";
             // 
             // nUDToolStripMenuItem
@@ -578,23 +578,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dockPanel1
-            // 
-            //this.dockPanel1.BackgroundImage = global::SmashForge.Properties.Resources.ForgeBack;
-            this.dockPanel1.BackgroundImage = global::SmashForge.Properties.Resources.ForgeBack;
-            this.dockPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPanel1.DockBottomPortion = 150D;
-            this.dockPanel1.DockLeftPortion = 200D;
-            this.dockPanel1.DockRightPortion = 290D;
-            this.dockPanel1.DockTopPortion = 150D;
-            this.dockPanel1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.dockPanel1.Location = new System.Drawing.Point(0, 24);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.RightToLeftLayout = true;
-            this.dockPanel1.Size = new System.Drawing.Size(1217, 741);
-            this.dockPanel1.TabIndex = 16;
-            // 
             // checkBox1
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -626,6 +609,22 @@
             this.greenArrowPictureBox.TabStop = false;
             this.greenArrowPictureBox.Click += new System.EventHandler(this.greenArrowPictureBox_Click);
             // 
+            // dockPanel1
+            // 
+            this.dockPanel1.BackgroundImage = global::SmashForge.Properties.Resources.WanganLogo;
+            this.dockPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dockPanel1.DockBottomPortion = 150D;
+            this.dockPanel1.DockLeftPortion = 200D;
+            this.dockPanel1.DockRightPortion = 290D;
+            this.dockPanel1.DockTopPortion = 150D;
+            this.dockPanel1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.dockPanel1.Location = new System.Drawing.Point(0, 24);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.RightToLeftLayout = true;
+            this.dockPanel1.Size = new System.Drawing.Size(1217, 741);
+            this.dockPanel1.TabIndex = 16;
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -644,7 +643,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Smash Forge";
+            this.Text = "Smash Forge (Wangan Edition)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_Close);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
