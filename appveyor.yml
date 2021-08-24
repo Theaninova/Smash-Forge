@@ -15,6 +15,20 @@ build:
 build_script:
   - msbuild "Smash Forge.sln"
 
+deploy:
+  tag: LatestCommit
+  release: Smash Forge [Latest Commit]
+  description: 'This build is updated every time a commit is pushed to the master branch.\n\nMessage: $(APPVEYOR_REPO_COMMIT_MESSAGE)\n\n Timestamp: $(APPVEYOR_REPO_COMMIT_TIMESTAMP)'
+  provider: GitHub
+  auth_token:
+    secure: ulCzFoF/6aa+CEkdQEbSdoFOm/1Fyynhnmqr558xaSn4seVHdYwPq2f0n4o5OrTZ
+  artifact: Smash-Forge-Latest_Commit.zip
+  draft: false
+  prerelease: true
+  force_update: true
+  on:
+    branch: master
+
 install:
 
 after_build:
