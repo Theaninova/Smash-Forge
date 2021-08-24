@@ -20,7 +20,7 @@ namespace SmashForge
     {
         private NUT currentNut;
         private FileSystemWatcher fw;
-        private Dictionary<NutTexture,string> fileFromTexture = new Dictionary<NutTexture, string>();
+        private Dictionary<NutTexture, string> fileFromTexture = new Dictionary<NutTexture, string>();
         private Dictionary<string, NutTexture> textureFromFile = new Dictionary<string, NutTexture>();
 
         // Rendering Stuff
@@ -494,14 +494,14 @@ namespace SmashForge
             if (currentNut == null) return;
             using (var ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Supported Formats|*.dds;*.png|" + 
+                ofd.Filter = "Supported Formats|*.dds;*.png|" +
                              "DirectDraw Surface (.dds)|*.dds|" +
                              "Portable Network Graphics (.png)|*.png|" +
                              "All files(*.*)|*.*";
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    
+
                     int texId;
                     bool isTex = int.TryParse(Path.GetFileNameWithoutExtension(ofd.FileName), NumberStyles.HexNumber,
                         new CultureInfo("en-US"), out texId);
@@ -571,18 +571,18 @@ namespace SmashForge
             BitmapData bmpData =
                 bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite,
                 System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            
+
             IntPtr ptr = bmpData.Scan0;
-            
+
             int bytes = Math.Abs(bmpData.Stride) * bmp.Height;
             byte[] pix = new byte[bytes];
-            
+
             Marshal.Copy(ptr, pix, 0, bytes);
 
             bmp.UnlockBits(bmpData);
 
             // swap red and blue channels
-            for(int i = 0; i < pix.Length; i += 4)
+            for (int i = 0; i < pix.Length; i += 4)
             {
                 byte temp = pix[i];
                 pix[i] = pix[i + 2];
@@ -640,7 +640,7 @@ namespace SmashForge
             {
                 NutTexture texture = (NutTexture)(textureListBox.SelectedItem);
 
-                ofd.Filter = "Supported Formats|*.dds;*.png|" + 
+                ofd.Filter = "Supported Formats|*.dds;*.png|" +
                              "DirectDraw Surface (.dds)|*.dds|" +
                              "Portable Network Graphics (.png)|*.png|" +
                              "All files(*.*)|*.*";
@@ -670,7 +670,7 @@ namespace SmashForge
                     texture.pixelFormat = newTexture.pixelFormat;
 
                     Edited = true;
-                    
+
                     //GL.DeleteTexture(NUT.glTexByHashId[texture.HASHID]);
                     currentNut.glTexByHashId.Remove(texture.HashId);
                     currentNut.glTexByHashId.Add(texture.HashId, NUT.CreateTexture2D(texture));
@@ -699,7 +699,7 @@ namespace SmashForge
             bool setupFileModifying = false;
             dontModify = true;
             fw.EnableRaisingEvents = true;
-            if (!fileFromTexture.ContainsKey((NutTexture) (textureListBox.SelectedItem)))
+            if (!fileFromTexture.ContainsKey((NutTexture)(textureListBox.SelectedItem)))
             {
                 tempFileName = Path.GetTempFileName();
                 DeleteIfExists(Path.ChangeExtension(tempFileName, ".dds"));
@@ -711,7 +711,7 @@ namespace SmashForge
             }
             else
             {
-                tempFileName = fileFromTexture[(NutTexture) textureListBox.SelectedItem];
+                tempFileName = fileFromTexture[(NutTexture)textureListBox.SelectedItem];
             }
 
             Dds dds = new Dds();
@@ -770,7 +770,7 @@ namespace SmashForge
         {
             if (dontModify)
                 return;
-            
+
             NutTexture tex = textureFromFile[filename];
 
             try
@@ -988,7 +988,7 @@ namespace SmashForge
             renderB = !renderB;
             renderChannelB.ForeColor = renderB ? Color.Blue : Color.DarkGray;
 
-            glControl1.Invalidate();            
+            glControl1.Invalidate();
         }
 
         private void renderChannelA_Click_1(object sender, EventArgs e)
@@ -996,7 +996,7 @@ namespace SmashForge
             renderAlpha = !renderAlpha;
             renderChannelA.ForeColor = renderAlpha ? Color.Black : Color.DarkGray;
 
-            glControl1.Invalidate();           
+            glControl1.Invalidate();
         }
 
         private void glControl1_KeyPress(object sender, KeyPressEventArgs e)
@@ -1028,7 +1028,7 @@ namespace SmashForge
             if (e.Button == MouseButtons.Right)
             {
                 int itemindex = textureListBox.IndexFromPoint(e.Location);
-                if(itemindex == -1)
+                if (itemindex == -1)
                 {
                     nutMenu.Show(this, new System.Drawing.Point(e.X + 15, e.Y));
 
@@ -1096,6 +1096,11 @@ namespace SmashForge
                 pngExportFramebuffer = new Framebuffer(FramebufferTarget.Framebuffer, glControl1.Width, glControl1.Height);
                 screenTriangle = ScreenDrawing.CreateScreenTriangle();
             }
+        }
+
+        private void batchOptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            nutMenu.Show(batchOptionsToolStripMenuItem.Owner, new System.Drawing.Point(batchOptionsToolStripMenuItem.Bounds.X, batchOptionsToolStripMenuItem.Bounds.Y + 25));
         }
     }
 }

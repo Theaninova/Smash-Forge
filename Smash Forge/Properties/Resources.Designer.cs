@@ -19,10 +19,10 @@ namespace SmashForge.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace SmashForge.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Smash_Forge.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SmashForge.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace SmashForge.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10040000 {
+        public static System.Drawing.Bitmap _10040000 {
             get {
                 object obj = ResourceManager.GetObject("_10040000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10040001 {
+        public static System.Drawing.Bitmap _10040001 {
             get {
                 object obj = ResourceManager.GetObject("_10040001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10080000 {
+        public static System.Drawing.Bitmap _10080000 {
             get {
                 object obj = ResourceManager.GetObject("_10080000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10100000 {
+        public static System.Drawing.Bitmap _10100000 {
             get {
                 object obj = ResourceManager.GetObject("_10100000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10101000 {
+        public static System.Drawing.Bitmap _10101000 {
             get {
                 object obj = ResourceManager.GetObject("_10101000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10102000 {
+        public static System.Drawing.Bitmap _10102000 {
             get {
                 object obj = ResourceManager.GetObject("_10102000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bitan {
+        public static System.Drawing.Bitmap bitan {
             get {
                 object obj = ResourceManager.GetObject("bitan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap boneWeightGradient {
+        public static System.Drawing.Bitmap boneWeightGradient {
             get {
                 object obj = ResourceManager.GetObject("boneWeightGradient", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap boneWeightGradient2 {
+        public static System.Drawing.Bitmap boneWeightGradient2 {
             get {
                 object obj = ResourceManager.GetObject("boneWeightGradient2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap defaultDif {
+        public static System.Drawing.Bitmap defaultDif {
             get {
                 object obj = ResourceManager.GetObject("defaultDif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] diffuseSDR {
+        public static byte[] diffuseSDR {
             get {
                 object obj = ResourceManager.GetObject("diffuseSDR", resourceCulture);
                 return ((byte[])(obj));
@@ -173,7 +173,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ForgeBack {
+        public static System.Drawing.Bitmap ForgeBack {
             get {
                 object obj = ResourceManager.GetObject("ForgeBack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_anim {
+        public static System.Drawing.Bitmap icon_anim {
             get {
                 object obj = ResourceManager.GetObject("icon_anim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_bfres {
+        public static System.Drawing.Bitmap icon_bfres {
             get {
                 object obj = ResourceManager.GetObject("icon_bfres", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +203,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_bone {
+        public static System.Drawing.Bitmap icon_bone {
             get {
                 object obj = ResourceManager.GetObject("icon_bone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +213,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_dat {
+        public static System.Drawing.Bitmap icon_dat {
             get {
                 object obj = ResourceManager.GetObject("icon_dat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +223,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_group {
+        public static System.Drawing.Bitmap icon_group {
             get {
                 object obj = ResourceManager.GetObject("icon_group", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -233,7 +233,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_image {
+        public static System.Drawing.Bitmap icon_image {
             get {
                 object obj = ResourceManager.GetObject("icon_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,7 +243,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_info {
+        public static System.Drawing.Bitmap icon_info {
             get {
                 object obj = ResourceManager.GetObject("icon_info", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -253,7 +253,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_mesh {
+        public static System.Drawing.Bitmap icon_mesh {
             get {
                 object obj = ResourceManager.GetObject("icon_mesh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -263,7 +263,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_model {
+        public static System.Drawing.Bitmap icon_model {
             get {
                 object obj = ResourceManager.GetObject("icon_model", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -273,7 +273,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_number {
+        public static System.Drawing.Bitmap icon_number {
             get {
                 object obj = ResourceManager.GetObject("icon_number", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -283,7 +283,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_polygon {
+        public static System.Drawing.Bitmap icon_polygon {
             get {
                 object obj = ResourceManager.GetObject("icon_polygon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -293,7 +293,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_skeleton {
+        public static System.Drawing.Bitmap icon_skeleton {
             get {
                 object obj = ResourceManager.GetObject("icon_skeleton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -303,7 +303,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap node_file {
+        public static System.Drawing.Bitmap node_file {
             get {
                 object obj = ResourceManager.GetObject("node_file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -313,7 +313,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap node_nud {
+        public static System.Drawing.Bitmap node_nud {
             get {
                 object obj = ResourceManager.GetObject("node_nud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -323,7 +323,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap node_nut {
+        public static System.Drawing.Bitmap node_nut {
             get {
                 object obj = ResourceManager.GetObject("node_nut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -333,7 +333,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap node_vbn {
+        public static System.Drawing.Bitmap node_vbn {
             get {
                 object obj = ResourceManager.GetObject("node_vbn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -343,7 +343,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nrm {
+        public static System.Drawing.Bitmap nrm {
             get {
                 object obj = ResourceManager.GetObject("nrm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -353,7 +353,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nrmMap {
+        public static System.Drawing.Bitmap nrmMap {
             get {
                 object obj = ResourceManager.GetObject("nrmMap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -363,7 +363,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sexy_green_down_arrow {
+        public static System.Drawing.Bitmap sexy_green_down_arrow {
             get {
                 object obj = ResourceManager.GetObject("sexy_green_down_arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -373,7 +373,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] specularSDR {
+        public static byte[] specularSDR {
             get {
                 object obj = ResourceManager.GetObject("specularSDR", resourceCulture);
                 return ((byte[])(obj));
@@ -383,7 +383,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap strip_camreset {
+        public static System.Drawing.Bitmap strip_camreset {
             get {
                 object obj = ResourceManager.GetObject("strip_camreset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -393,7 +393,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap strip_camsettings {
+        public static System.Drawing.Bitmap strip_camsettings {
             get {
                 object obj = ResourceManager.GetObject("strip_camsettings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -403,7 +403,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap strip_gif {
+        public static System.Drawing.Bitmap strip_gif {
             get {
                 object obj = ResourceManager.GetObject("strip_gif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -413,7 +413,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap strip_pos {
+        public static System.Drawing.Bitmap strip_pos {
             get {
                 object obj = ResourceManager.GetObject("strip_pos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -423,7 +423,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap strip_render {
+        public static System.Drawing.Bitmap strip_render {
             get {
                 object obj = ResourceManager.GetObject("strip_render", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -433,7 +433,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap strip_rot {
+        public static System.Drawing.Bitmap strip_rot {
             get {
                 object obj = ResourceManager.GetObject("strip_rot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -443,7 +443,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap strip_sca {
+        public static System.Drawing.Bitmap strip_sca {
             get {
                 object obj = ResourceManager.GetObject("strip_sca", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -453,7 +453,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tan {
+        public static System.Drawing.Bitmap tan {
             get {
                 object obj = ResourceManager.GetObject("tan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -463,7 +463,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap uv {
+        public static System.Drawing.Bitmap uv {
             get {
                 object obj = ResourceManager.GetObject("uv", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -473,7 +473,7 @@ namespace SmashForge.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap UVPattern {
+        public static System.Drawing.Bitmap UVPattern {
             get {
                 object obj = ResourceManager.GetObject("UVPattern", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

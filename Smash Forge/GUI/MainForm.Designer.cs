@@ -1,33 +1,33 @@
 ﻿namespace SmashForge
 {
-	partial class MainForm
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class MainForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -188,7 +188,7 @@
             // openStageToolStripMenuItem1
             // 
             this.openStageToolStripMenuItem1.Name = "openStageToolStripMenuItem1";
-            this.openStageToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.openStageToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
             | System.Windows.Forms.Keys.S)));
             this.openStageToolStripMenuItem1.Size = new System.Drawing.Size(252, 22);
             this.openStageToolStripMenuItem1.Text = "Open Stage";
@@ -197,7 +197,7 @@
             // openCharacterToolStripMenuItem1
             // 
             this.openCharacterToolStripMenuItem1.Name = "openCharacterToolStripMenuItem1";
-            this.openCharacterToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.openCharacterToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
             | System.Windows.Forms.Keys.O)));
             this.openCharacterToolStripMenuItem1.Size = new System.Drawing.Size(252, 22);
             this.openCharacterToolStripMenuItem1.Text = "Open Character";
@@ -207,7 +207,7 @@
             // open3DSCharacterToolStripMenuItem
             // 
             this.open3DSCharacterToolStripMenuItem.Name = "open3DSCharacterToolStripMenuItem";
-            this.open3DSCharacterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.open3DSCharacterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
             | System.Windows.Forms.Keys.D3)));
             this.open3DSCharacterToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.open3DSCharacterToolStripMenuItem.Text = "Open 3DS Character";
@@ -580,6 +580,7 @@
             // 
             // dockPanel1
             // 
+            //this.dockPanel1.BackgroundImage = global::SmashForge.Properties.Resources.ForgeBack;
             this.dockPanel1.BackgroundImage = global::SmashForge.Properties.Resources.ForgeBack;
             this.dockPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -654,18 +655,18 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem openVBNToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem openNUDToolStripMenuItem;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem animationToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openVBNToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openNUDToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem animationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
