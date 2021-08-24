@@ -113,7 +113,7 @@ namespace SmashForge
             ImageKey = "texture";
             SelectedImageKey = "texture";
         }
-        
+
         public override string ToString()
         {
             return HashId.ToString("x").ToUpper();
@@ -241,7 +241,7 @@ namespace SmashForge
             save.Click += Save;
         }
 
-        public NUT (string filename) : this()
+        public NUT(string filename) : this()
         {
             Read(filename);
         }
@@ -352,7 +352,7 @@ namespace SmashForge
             uint headerLength = 0;
 
             foreach (NutTexture texture in Nodes)
-            {         
+            {
                 byte surfaceCount = (byte)texture.surfaces.Count;
                 bool isCubemap = surfaceCount == 6;
                 if (surfaceCount < 1 || surfaceCount > 6)
@@ -463,12 +463,12 @@ namespace SmashForge
                     texture.SwapChannelOrderUp();
                 }
 
-                o.WriteBytes(new byte[] {0x65,0x58,0x74,0x00}); // "eXt\0"
+                o.WriteBytes(new byte[] { 0x65, 0x58, 0x74, 0x00 }); // "eXt\0"
                 o.WriteInt(0x20);
                 o.WriteInt(0x10);
                 o.WriteInt(0x00);
 
-                o.WriteBytes(new byte[] {0x47,0x49,0x44,0x58}); // "GIDX"
+                o.WriteBytes(new byte[] { 0x47, 0x49, 0x44, 0x58 }); // "GIDX"
                 o.WriteInt(0x10);
                 o.WriteInt(texture.HashId);
                 o.WriteInt(0);
@@ -507,7 +507,7 @@ namespace SmashForge
             {
                 ReadNTWU(d);
             }
-            else if (magic == 0x4E545744) //NTWD
+            else if (magic == 0x4E545744 || magic == 0x4E544C58) //NTWD
             {
                 Endian = Endianness.Little;
                 d.endian = Endian;
@@ -859,7 +859,7 @@ namespace SmashForge
         public static bool texIdUsed(int texId)
         {
             foreach (var nut in Runtime.textureContainers)
-                foreach(NutTexture tex in nut.Nodes)
+                foreach (NutTexture tex in nut.Nodes)
                     if (tex.HashId == texId)
                         return true;
             return false;
@@ -895,12 +895,12 @@ namespace SmashForge
             List<byte> previous4thBytes = new List<byte>();
             foreach (NutTexture tex in Nodes)
             {
-                byte fourthByte = (byte) (tex.HashId & 0xFF);
+                byte fourthByte = (byte)(tex.HashId & 0xFF);
                 if (!(previous4thBytes.Contains(fourthByte)))
                     previous4thBytes.Add(fourthByte);
                 else
                     return true;
-                    
+
             }
 
             return false;
