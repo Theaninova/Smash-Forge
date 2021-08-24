@@ -19,6 +19,9 @@ namespace SmashForge
             {
                 if (b[0] == 0x78 && b[1] == 0x9C)
                     b = InflateZlib(b);
+
+                if (b[0] == 0x1F && b[1] == 0x8B)
+                    b = UnzipGzip(b);
             }
         }
 
@@ -271,13 +274,13 @@ namespace SmashForge
 
         public void WriteBytesAt(int p, byte[] bytes)
         {
-            if(p + bytes.Length > b.Length)
+            if (p + bytes.Length > b.Length)
             {
                 byte[] newb = new byte[b.Length + ((p + bytes.Length + b.Length) - bytes.Length)];
                 Array.Copy(b, newb, b.Length);
                 b = newb;
             }
-            for(int i =0; i < bytes.Length; i ++)
+            for (int i = 0; i < bytes.Length; i++)
             {
                 b[p++] = bytes[i];
             }
@@ -354,7 +357,25 @@ namespace SmashForge
             zlibStream.Close();
             return stream.ToArray();
         }
-
+        public static byte[] UnzipGzip(byte[] i)
+        {
+            var stream = new MemoryStream();
+            var ms = new MemoryStream(i);
+            //ms.ReadByte();
+            //ms.ReadByte();
+            var gzipStream = new GZipStream(ms, CompressionMode.Decompress);
+            byte[] buffer = new byte[4095];
+            while (true)
+            {
+                int size = gzipStream.Read(buffer, 0, buffer.Length);
+                if (size > 0)
+                    stream.Write(buffer, 0, buffer.Length);
+                else
+                    break;
+            }
+            gzipStream.Close();
+            return stream.ToArray();
+        }
         public class Decompress
         {
             public static FileData Yaz0(FileData i)
