@@ -363,6 +363,8 @@
             // preserveAspectRatioCB
             // 
             this.preserveAspectRatioCB.AutoSize = true;
+            this.preserveAspectRatioCB.Checked = true;
+            this.preserveAspectRatioCB.CheckState = System.Windows.Forms.CheckState.Checked;
             this.preserveAspectRatioCB.Location = new System.Drawing.Point(6, 57);
             this.preserveAspectRatioCB.Name = "preserveAspectRatioCB";
             this.preserveAspectRatioCB.Size = new System.Drawing.Size(132, 17);

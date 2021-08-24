@@ -33,7 +33,7 @@ namespace SmashForge
         private bool renderB = true;
         private bool renderAlpha = true;
 
-        private bool keepAspectRatio = false;
+        private bool keepAspectRatio = true;
 
         private int currentMipLevel = 0;
 
