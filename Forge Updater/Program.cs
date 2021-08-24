@@ -98,13 +98,13 @@ namespace Forge_Updater
                                     Directory.Delete(Path.Combine(forgeDir, dirName + @"\"), true);
                                 Directory.Move(dir, Path.Combine(forgeDir, dirName + @"\"));
                             }
-                            else if(dirName.Equals("updater"))
+                            else if (dirName.Equals("updater"))
                             {
                                 Directory.Move(dir, Path.Combine(forgeDir, @"new_updater\"));
                             }
-                            else if(dirName.Equals("param_labels"))
+                            else if (dirName.Equals("param_labels"))
                             {
-                                foreach(string file in Directory.EnumerateFiles(dir))
+                                foreach (string file in Directory.EnumerateFiles(dir))
                                 {
                                     string copyPath = Path.Combine(forgeDir, "param_labels/", Path.GetFileName(file));
                                     File.Copy(file, copyPath, true);
@@ -112,13 +112,13 @@ namespace Forge_Updater
                             }
                             else if (dirName.Equals("materials"))
                             {
-                                foreach(string folder in Directory.EnumerateDirectories(dir))
+                                foreach (string folder in Directory.EnumerateDirectories(dir))
                                 {
                                     if (!Directory.Exists(Path.Combine(forgeDir, dirName + @"\", folder + @"\")))
                                         Directory.CreateDirectory(Path.Combine(forgeDir, dirName + @"\", folder + @"\"));
-                                    foreach(string file in Directory.EnumerateFiles(folder))
+                                    foreach (string file in Directory.EnumerateFiles(folder))
                                         File.Copy(file, Path.Combine(Path.Combine(forgeDir, dirName + @"\", folder + @"\"), Path.GetFileName(file)), true);
-                                    
+
                                 }
                             }
                         }
@@ -131,7 +131,7 @@ namespace Forge_Updater
                     }
                 }
 
-                
+
 
                 foreach (string arg in args)
                 {
@@ -148,13 +148,13 @@ namespace Forge_Updater
             {
                 return 1;
             }
-            
+
         }
 
         private static async Task GetReleases(GitHubClient client)
         {
             List<Release> releases = new List<Release>();
-            foreach (Release r in await client.Repository.Release.GetAll("jam1garner", "Smash-Forge"))
+            foreach (Release r in await client.Repository.Release.GetAll("EmiMidnight", "Smash-Forge"))
                 releases.Add(r);
             Program.releases = releases.ToArray();
         }
