@@ -47,6 +47,8 @@ namespace SmashForge
         public int Width;
         public int Height;
 
+        public int InternalType;
+
         public PixelInternalFormat pixelInternalFormat;
         public OpenTK.Graphics.OpenGL.PixelFormat pixelFormat;
         public PixelType pixelType = PixelType.UnsignedByte;
@@ -135,6 +137,7 @@ namespace SmashForge
                     case PixelInternalFormat.Rgba16:
                         return surfaces[0].mipmaps[0].Length / 2;
                     case PixelInternalFormat.Rgba:
+                    case PixelInternalFormat.Rgba32ui:
                         return surfaces[0].mipmaps[0].Length;
                     default:
                         return surfaces[0].mipmaps[0].Length;
@@ -155,6 +158,8 @@ namespace SmashForge
                 case PixelInternalFormat.Rgb16:
                     return 8;
                 case PixelInternalFormat.Rgba:
+                    if (InternalType == 21)
+                        return 21;
                     if (pixelFormat == OpenTK.Graphics.OpenGL.PixelFormat.Rgba)
                         return 14;
                     else
@@ -206,7 +211,8 @@ namespace SmashForge
                     pixelFormat = OpenTK.Graphics.OpenGL.PixelFormat.Rgba;
                     break;
                 case 21:
-                    pixelInternalFormat = PixelInternalFormat.CompressedRedRgtc1;
+                    pixelInternalFormat = PixelInternalFormat.Rgba;
+                    pixelFormat = OpenTK.Graphics.OpenGL.PixelFormat.Rgba;
                     break;
                 case 22:
                     pixelInternalFormat = PixelInternalFormat.CompressedRgRgtc2;
@@ -542,7 +548,9 @@ namespace SmashForge
                 d.Skip(1);
                 byte mipmapCount = d.ReadByte();
                 d.Skip(1);
-                tex.setPixelFormatFromNutFormat(d.ReadByte());
+                tex.InternalType = d.ReadByte();
+                //tex.setPixelFormatFromNutFormat(d.ReadByte());
+                tex.setPixelFormatFromNutFormat(tex.InternalType);
                 tex.Width = d.ReadUShort();
                 tex.Height = d.ReadUShort();
                 d.Skip(4); //0 in dds nuts (like NTP3) and 1 in gtx nuts; texture type?
@@ -574,6 +582,16 @@ namespace SmashForge
                 {
                     dataOffset = d.ReadInt() + headerPtr;
                 }
+
+                if (tex.InternalType == 21)
+                {
+                    //dataOffset = dataOffset - 1;
+                }
+
+                Console.WriteLine("\nTextureId: " + i.ToString());
+                Console.WriteLine("TextureType is: " + tex.InternalType.ToString());
+                Console.WriteLine("Dataoffset is: " + dataOffset.ToString());
+
                 d.ReadInt();
                 d.ReadInt();
                 d.ReadInt();
