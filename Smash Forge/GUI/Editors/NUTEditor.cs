@@ -639,7 +639,7 @@ namespace SmashForge
             using (var ofd = new OpenFileDialog())
             {
                 NutTexture texture = (NutTexture)(textureListBox.SelectedItem);
-
+                int currentSelection = textureListBox.SelectedIndex;
                 ofd.Filter = "Supported Formats|*.dds;*.png|" +
                              "DirectDraw Surface (.dds)|*.dds|" +
                              "Portable Network Graphics (.png)|*.png|" +
@@ -676,6 +676,7 @@ namespace SmashForge
                     currentNut.glTexByHashId.Add(texture.HashId, NUT.CreateTexture2D(texture));
 
                     FillForm();
+                    textureListBox.SelectedIndex = currentSelection;
                 }
             }
         }
