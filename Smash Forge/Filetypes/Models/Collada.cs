@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SmashForge
 {
-    class Collada
+    public class Collada
     {
         public Collada()
         {
@@ -988,7 +988,7 @@ namespace SmashForge
                     image.name = tex.Text;
                     image.initref = tex.Text + ".png";
 
-                    tex.ExportAsImage(tex.texture, tex.display, fname.Substring(0, fname.LastIndexOf("\\") + 1) + tex.Text + ".png");
+                    // tex.ExportAsImage(tex.texture, tex.display, fname.Substring(0, fname.LastIndexOf("\\") + 1) + tex.Text + ".png");
                     tid++;
                 }
             }   
@@ -1026,12 +1026,12 @@ namespace SmashForge
                     ColladaEffects eff = new ColladaEffects();
                     eff.id = "Effect" + num;
                     eff.name = geom.name + "-effect";
-                    eff.source = eff.name + "tex";
+                    eff.source = eff.name + "tex" + mesh.material.textures[0].Name;
                     dae.library_effects.Add(eff);
 
                     ColladaImages img = new ColladaImages();
                     img.id = eff.source;
-                    img.initref = "./" + mesh.material.textures[0].Name + ".png";
+                    img.initref = ".\\textures\\" + mesh.material.textures[0].Name + ".dds";
                     dae.library_images.Add(img);
 
                     ColladaSampler2D samp = new ColladaSampler2D();
@@ -1053,6 +1053,17 @@ namespace SmashForge
                     ColladaVertices vertex = new ColladaVertices();
                     vertex.id = mesh.Text + fmdl.Nodes.IndexOf(mesh) + "_verts";
                     geom.mesh.vertices = vertex;
+
+                    // create polygon objects (nud uses basically 1)
+                    ColladaPolygons p = new ColladaPolygons();
+                    ColladaInput inv = new ColladaInput();
+                    inv.offset = 0;
+                    inv.semanticType = SemanticType.VERTEX;
+                    inv.source = "#" + mesh.Text + fmdl.Nodes.IndexOf(mesh) + "_verts";
+                    p.inputs.Add(inv);
+                    p.p = mesh.lodMeshes[mesh.DisplayLODIndex].getDisplayFace().ToArray();
+                    p.count = 42; // mesh.lodMeshes[mesh.DisplayLODIndex].faces.Count;
+                    geom.mesh.polygons.Add(p);
 
                     // create sources... this may take a minute
                     // POSITION
@@ -1079,7 +1090,7 @@ namespace SmashForge
                         geom.mesh.sources.Add(src);
                         src.id = mesh.Text + fmdl.Nodes.IndexOf(mesh) + "_nrm";
                         //src.name = mesh.name + "src1";
-                        vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.NORMAL });
+                        p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.NORMAL });
                         List<string> d = new List<string>();
                         foreach (BFRES.Vertex v in mesh.vertices)
                         {
@@ -1097,7 +1108,7 @@ namespace SmashForge
                         geom.mesh.sources.Add(src);
                         src.id = mesh.Text + fmdl.Nodes.IndexOf(mesh) + "_tx0";
                         //src.name = mesh.name + "src1";
-                        vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.TEXCOORD });
+                        p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.TEXCOORD });
                         List<string> d = new List<string>();
                         foreach (BFRES.Vertex v in mesh.vertices)
                         {
@@ -1114,7 +1125,7 @@ namespace SmashForge
                         geom.mesh.sources.Add(src);
                         src.id = mesh.Text + fmdl.Nodes.IndexOf(mesh) + "_clr";
                         //src.name = mesh.name + "src1";
-                        vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.COLOR });
+                        p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.COLOR });
                         List<string> d = new List<string>();
                         foreach (BFRES.Vertex v in mesh.vertices)
                         {
@@ -1127,17 +1138,6 @@ namespace SmashForge
                         src.data = d.ToArray();
                         src.count = d.Count * 4;
                     }
-
-                    // create polygon objects (nud uses basically 1)
-                    ColladaPolygons p = new ColladaPolygons();
-                    ColladaInput inv = new ColladaInput();
-                    inv.offset = 0;
-                    inv.semanticType = SemanticType.VERTEX;
-                    inv.source = "#" + mesh.Text + fmdl.Nodes.IndexOf(mesh) + "_verts";
-                    p.inputs.Add(inv);
-                    p.count = mesh.lodMeshes[mesh.DisplayLODIndex].displayFaceSize;
-                    p.p = mesh.lodMeshes[mesh.DisplayLODIndex].getDisplayFace().ToArray();
-                    geom.mesh.polygons.Add(p);
 
                     // create controllers too
                     ColladaController control = new ColladaController();
@@ -1391,8 +1391,8 @@ namespace SmashForge
                     }
                 }
                 p.inputs.Add(inv);
-                p.count = faces.Count;
                 p.p = faces.ToArray();
+                p.count = 42; // faces.Count;
                 geom.mesh.polygons.Add(p);
 
                 // create sources... this may take a minute
@@ -1418,7 +1418,7 @@ namespace SmashForge
                     ColladaSource src = new ColladaSource();
                     geom.mesh.sources.Add(src);
                     src.id = geom.name + "_nrm";
-                    vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.NORMAL });
+                    p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.NORMAL });
                     List<string> d = new List<string>();
                     foreach (DAT.Vertex v in usedVertices)
                     {
@@ -1436,7 +1436,7 @@ namespace SmashForge
                     geom.mesh.sources.Add(src);
                     src.id = geom.name + "_tx0";
                     //src.name = mesh.name + "src1";
-                    vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.TEXCOORD });
+                    p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.TEXCOORD });
                     List<string> d = new List<string>();
                     foreach (DAT.Vertex v in usedVertices)
                     {
@@ -1453,7 +1453,7 @@ namespace SmashForge
                     geom.mesh.sources.Add(src);
                     src.id = geom.name + "_clr";
                     //src.name = mesh.name + "src1";
-                    vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.COLOR });
+                    p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.COLOR });
                     List<string> d = new List<string>();
                     foreach (DAT.Vertex v in usedVertices)
                     {
@@ -1567,6 +1567,7 @@ namespace SmashForge
 
             if (con.Bfres != null)
             {
+                Console.Out.WriteLine("BFRES");
                 BFRES2DAESave(fname, con.Bfres, con);
                 return;
             }
@@ -1600,8 +1601,8 @@ namespace SmashForge
                 {
                     ColladaGeometry geom = new ColladaGeometry();
                     dae.library_geometries.Add(geom);
-                    geom.name = mesh.Text;
-                    geom.id = mesh.Text + mesh.Nodes.IndexOf(poly); ;
+                    geom.name = mesh.Text + "_" + num;
+                    geom.id = mesh.Text + mesh.Nodes.IndexOf(poly) + "_" + num;
                     geom.mesh = new ColladaMesh();
 
                     // create a node for this
@@ -1624,12 +1625,12 @@ namespace SmashForge
                     ColladaEffects eff = new ColladaEffects();
                     eff.id = "Effect" + num;
                     eff.name = geom.name + "-effect";
-                    eff.source = eff.name + "tex";
+                    eff.source = eff.name + "tex" + num;
                     dae.library_effects.Add(eff);
 
                     ColladaImages img = new ColladaImages();
                     img.id = eff.source;
-                    img.initref = "./" + poly.materials[0].textures[0].hash.ToString("x") + ".png";
+                    img.initref = "./textures/" + poly.materials[0].textures[0].hash.ToString("x") + ".dds";
                     dae.library_images.Add(img);
 
                     ColladaSampler2D samp = new ColladaSampler2D();
@@ -1651,6 +1652,18 @@ namespace SmashForge
                     ColladaVertices vertex = new ColladaVertices();
                     vertex.id = mesh.Text + mesh.Nodes.IndexOf(poly) + "_verts";
                     geom.mesh.vertices = vertex;
+
+                    // create polygon objects (nud uses basically 1)
+                    // THIS IS THE THING
+                    ColladaPolygons p = new ColladaPolygons();
+                    ColladaInput inv = new ColladaInput();
+                    inv.offset = 0;
+                    inv.semanticType = SemanticType.VERTEX;
+                    inv.source = "#" + mesh.Text + mesh.Nodes.IndexOf(poly) + "_verts";
+                    p.inputs.Add(inv);
+                    p.p = poly.GetRenderingVertexIndices().ToArray();
+                    p.count = poly.displayFaceSize;
+                    geom.mesh.polygons.Add(p);
 
                     // create sources... this may take a minute
                     // POSITION
@@ -1677,7 +1690,7 @@ namespace SmashForge
                         geom.mesh.sources.Add(src);
                         src.id = mesh.Text + mesh.Nodes.IndexOf(poly) + "_nrm";
                         //src.name = mesh.name + "src1";
-                        vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.NORMAL });
+                        p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.NORMAL });
                         List<string> d = new List<string>();
                         foreach (Nud.Vertex v in poly.vertices)
                         {
@@ -1695,11 +1708,11 @@ namespace SmashForge
                         geom.mesh.sources.Add(src);
                         src.id = mesh.Text + mesh.Nodes.IndexOf(poly) + "_tx0";
                         //src.name = mesh.name + "src1";
-                        vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.TEXCOORD });
+                        p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.TEXCOORD });
                         List<string> d = new List<string>();
                         foreach (Nud.Vertex v in poly.vertices)
                         {
-                            d.AddRange(new string[] { v.uv[0].X.ToString(), v.uv[0].Y.ToString()});
+                            d.AddRange(new string[] { v.uv[0].X.ToString(), (-v.uv[0].Y).ToString()});
                         }
                         src.accessorParams.Add("S");
                         src.accessorParams.Add("T");
@@ -1712,7 +1725,7 @@ namespace SmashForge
                         geom.mesh.sources.Add(src);
                         src.id = mesh.Text + mesh.Nodes.IndexOf(poly) + "_clr";
                         //src.name = mesh.name + "src1";
-                        vertex.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.COLOR });
+                        p.inputs.Add(new ColladaInput() { source = "#" + src.id, semanticType = SemanticType.COLOR });
                         List<string> d = new List<string>();
                         foreach (Nud.Vertex v in poly.vertices)
                         {
@@ -1725,17 +1738,6 @@ namespace SmashForge
                         src.data = d.ToArray();
                         src.count = d.Count * 4;
                     }
-
-                    // create polygon objects (nud uses basically 1)
-                    ColladaPolygons p = new ColladaPolygons();
-                    ColladaInput inv = new ColladaInput();
-                    inv.offset = 0;
-                    inv.semanticType = SemanticType.VERTEX;
-                    inv.source = "#" + mesh.Text + mesh.Nodes.IndexOf(poly) + "_verts";
-                    p.inputs.Add(inv);
-                    p.count = poly.displayFaceSize;
-                    p.p = poly.GetRenderingVertexIndices().ToArray();
-                    geom.mesh.polygons.Add(p);
 
                     // create controllers too
                     ColladaController control = new ColladaController();
@@ -2280,7 +2282,7 @@ namespace SmashForge
                 XmlNode node = doc.CreateElement(type.ToString());
 
                 node.Attributes.Append(CreateAttribute(doc, "material", materialid));
-                node.Attributes.Append(CreateAttribute(doc, "count", count+""));
+                node.Attributes.Append(CreateAttribute(doc, "count", count.ToString()));
 
                 foreach (ColladaInput input in inputs)
                 {

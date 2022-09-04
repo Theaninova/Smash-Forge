@@ -832,6 +832,11 @@ namespace SmashForge
             fileData.endian = Endianness.Big;
             fileData.Seek(0);
 
+            Read(fileData);
+        }
+
+        public void Read(FileData fileData)
+        {
             // read header
             string magic = fileData.ReadString(0, 4);
             fileData.Seek(4);
