@@ -1030,15 +1030,18 @@ namespace SmashForge
                 TagType tagType = (TagType)f.ReadInt();
                 int tagSize = f.ReadInt(); // in dwords!
 
-                switch (tagType)
+                try
                 {
-                    case TagType.Invalid:
+                    switch (tagType)
+                    {
+                        case TagType.Invalid:
                         {
                             // uhhh. i think there's a specific exception for this
-                            throw new Exception("Malformed file");
+                            // throw new Exception("Malformed file");
+                            break;
                         }
 
-                    case TagType.Symbols:
+                        case TagType.Symbols:
                         {
                             int numSymbols = f.ReadInt();
 
@@ -1053,66 +1056,67 @@ namespace SmashForge
                             break;
                         }
 
-                    case TagType.Colors:
+                        case TagType.Colors:
                         {
                             int numColors = f.ReadInt();
 
                             for (int i = 0; i < numColors; i++)
                             {
-                                AddColor(new Vector4(f.ReadShort() / 256f, f.ReadShort() / 256f, f.ReadShort() / 256f, f.ReadShort() / 256f));
+                                AddColor(new Vector4(f.ReadShort() / 256f, f.ReadShort() / 256f, f.ReadShort() / 256f,
+                                    f.ReadShort() / 256f));
                             }
 
                             break;
                         }
 
-                    case TagType.Fonts:
+                        case TagType.Fonts:
                         {
                             unk000A = new UnhandledTag(tagType, tagSize, f);
                             break;
                         }
-                    case TagType.UnkF00A:
+                        case TagType.UnkF00A:
                         {
                             unkF00A = new UnhandledTag(tagType, tagSize, f);
                             break;
                         }
-                    case TagType.UnkF00B:
+                        case TagType.UnkF00B:
                         {
                             unkF00B = new UnhandledTag(tagType, tagSize, f);
                             break;
                         }
-                    case TagType.UnkF008:
+                        case TagType.UnkF008:
                         {
                             unkF008 = new UnhandledTag(tagType, tagSize, f);
                             break;
                         }
-                    case TagType.UnkF009:
+                        case TagType.UnkF009:
                         {
                             unkF009 = new UnhandledTag(tagType, tagSize, f);
                             break;
                         }
-                    case TagType.Defines:
+                        case TagType.Defines:
                         {
                             Defines = new Properties2(f);
                             break;
                         }
-                    case TagType.ActionScript:
+                        case TagType.ActionScript:
                         {
                             Actionscript = new UnhandledTag(tagType, tagSize, f);
                             break;
                         }
-                    case TagType.ActionScript2:
+                        case TagType.ActionScript2:
                         {
                             Actionscript2 = new UnhandledTag(tagType, tagSize, f);
                             break;
                         }
 
-                    case TagType.End:
+                        case TagType.End:
                         {
                             done = true;
                             break;
                         }
 
-                    case TagType.Transforms:
+                        case TagType.Transforms:
                         {
                             int numTransforms = f.ReadInt();
 
@@ -1138,7 +1142,7 @@ namespace SmashForge
                             break;
                         }
 
-                    case TagType.Positions:
+                        case TagType.Positions:
                         {
                             int numPositions = f.ReadInt();
 
@@ -1150,7 +1154,7 @@ namespace SmashForge
                             break;
                         }
 
-                    case TagType.Bounds:
+                        case TagType.Bounds:
                         {
                             int numBounds = f.ReadInt();
 
@@ -1158,16 +1162,17 @@ namespace SmashForge
                             {
                                 Bounds.Add(new Rect(f.ReadFloat(), f.ReadFloat(), f.ReadFloat(), f.ReadFloat()));
                             }
+
                             break;
                         }
 
-                    case TagType.Properties:
+                        case TagType.Properties:
                         {
                             properties = new Properties(f);
                             break;
                         }
 
-                    case TagType.TextureAtlases:
+                        case TagType.TextureAtlases:
                         {
                             int numAtlases = f.ReadInt();
 
@@ -1185,28 +1190,35 @@ namespace SmashForge
                             break;
                         }
 
-                    case TagType.Shape:
+                        case TagType.Shape:
                         {
                             Shapes.Add(new Shape(f));
                             break;
                         }
 
-                    case TagType.DynamicText:
+                        case TagType.DynamicText:
                         {
                             Texts.Add(new DynamicText(f));
                             break;
                         }
 
-                    case TagType.DefineSprite:
+                        case TagType.DefineSprite:
                         {
                             Sprites.Add(new Sprite(f));
                             break;
                         }
 
-                    default:
+                        default:
                         {
-                            throw new NotImplementedException($"Unhandled tag id: 0x{(uint)tagType:X} @ 0x{tagOffset:X}");
+                            //throw new NotImplementedException($"Unhandled tag id: 0x{(uint)tagType:X} @ 0x{tagOffset:X}");
+                            break;
                         }
+
+                    }
+                }
+                catch
+                {
+                    // noop
                 }
             }
         } // Read()
